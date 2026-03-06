@@ -1,11 +1,62 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub | Login</title>
+    <link
+      rel="shortcut icon"
+      href="assets/img/github-logo.png"
+      type="image/x-icon"
+    />
+    <!-- DaisyUI CDN Start -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@5"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- DaisyUI CDN end -->
+
+    <!-- Google Font Start -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Google Font End -->
+    <!-- style sheet -->
+    <link rel="stylesheet" href="assets/styles/design.css" />
+  </head>
+  <body>
+    <main class="">
+      <div class="login-card">
+        <div class="top-part">
+            <img src="assets/img/github-logo.png" alt="Github Logo">
+            <h2>GitHub Issues Tracker</h2>
+            <p>Sign in to manage your issues</p>
+        </div>
+        <fieldset
+          class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
+        >
+
+          <label class="label">Email</label>
+          <input type="email" class="input" placeholder="Email" />
+
+          <label class="label">Password</label>
+          <input type="password" class="input" placeholder="Password" />
+
+          <button class="btn btn-neutral mt-4">Login</button>
+        </fieldset>
+        <div class="bottom-part">
+            <div class="o flex ">
+                <div><hr></div>
+                <div>OR</div>
+                <div><hr></div>
+            </div>
+        </div>
+      </div>
+    </main>
+  </body>
 </html>
