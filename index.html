@@ -45,12 +45,12 @@
         </div>
         <fieldset class="fieldset mx-auto w-xs">
           <label class="label text-neutral font-bold">User Name</label>
-          <input type="text" class="input" placeholder="Enter User Name" />
+          <input id="user-input" type="text" class="input" placeholder="Enter User Name" />
 
           <label class="label text-neutral font-bold">Password</label>
-          <input type="password" class="input" placeholder="Enter Password" />
+          <input id="user-pass" type="password" class="input" placeholder="Enter Password" />
 
-          <button class="btn btn-primary mt-4">Sign In</button>
+          <button id="login-btn" onclick="loginHandler()" type="button" class="btn btn-primary mt-4">Sign In</button>
         </fieldset>
         <div class="flex items-center my-4">
           <div class="flex-grow border-t border-gray-300"></div>
@@ -66,5 +66,6 @@
         </div>
       </div>
     </main>
+    <script src="assets/scripts/login.js"></script>
   </body>
 </html>
