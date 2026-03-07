@@ -30,31 +30,39 @@
     <link rel="stylesheet" href="assets/styles/design.css" />
   </head>
   <body>
-    <main class="">
-      <div class="login-card">
-        <div class="top-part">
-            <img src="assets/img/github-logo.png" alt="Github Logo">
-            <h2>GitHub Issues Tracker</h2>
-            <p>Sign in to manage your issues</p>
+    <main
+      class="min-h-screen flex items-center justify-center bg-[#F8FAFC] p-8"
+    >
+      <div class="bg-base-100 py-10 px-4 rounded-xl shadow-2xl w-96">
+        <div class="top-part text-center">
+          <img
+            class="mx-auto w-[60px] mb-4"
+            src="assets/img/github-logo.png"
+            alt="Github Logo"
+          />
+          <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
+          <p class="text-[#64748B] my-2">Sign in to manage your issues</p>
         </div>
-        <fieldset
-          class="fieldset bg-base-200 border-base-300 rounded-box w-xs border p-4"
-        >
+        <fieldset class="fieldset mx-auto w-xs">
+          <label class="label text-neutral font-bold">User Name</label>
+          <input type="text" class="input" placeholder="Enter User Name" />
 
-          <label class="label">Email</label>
-          <input type="email" class="input" placeholder="Email" />
+          <label class="label text-neutral font-bold">Password</label>
+          <input type="password" class="input" placeholder="Enter Password" />
 
-          <label class="label">Password</label>
-          <input type="password" class="input" placeholder="Password" />
-
-          <button class="btn btn-neutral mt-4">Login</button>
+          <button class="btn btn-primary mt-4">Sign In</button>
         </fieldset>
-        <div class="bottom-part">
-            <div class="o flex ">
-                <div><hr></div>
-                <div>OR</div>
-                <div><hr></div>
-            </div>
+        <div class="flex items-center my-4">
+          <div class="flex-grow border-t border-gray-300"></div>
+          <span class="px-3 text-gray-500 text-sm font-medium">OR</span>
+          <div class="flex-grow border-t border-gray-300"></div>
+        </div>
+        <div class="bottom-part text-center mt-4">
+          Demo Credentials:
+          <div class="bg-[#F8FAFC] mt-3 space-y-1">
+            <p><span class="font-bold">Username:</span> admin</p>
+            <p><span class="font-bold">Password:</span> admin123</p>
+          </div>
         </div>
       </div>
     </main>
