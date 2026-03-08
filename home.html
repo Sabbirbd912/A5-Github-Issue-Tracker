@@ -26,6 +26,15 @@
       rel="stylesheet"
     />
     <!-- Google Font End -->
+    <!-- FontAwesome start -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- FontAwesome end -->
     <!-- style sheet -->
     <link rel="stylesheet" href="assets/styles/design.css" />
   </head>
@@ -122,11 +131,63 @@
         <button class="btn btn-soft px-2 w-16">Open</button>
         <button class="btn btn-soft px-2 w-16">Closed</button>
       </section>
+      <!-- Body Section start -->
       <section>
-        <div>
+        <!-- Body Topbar start -->
+        <div
+          class="bg-[#FFFFFF] shadow rounded flex flex-col md:flex-row items-center justify-between my-4 p-4 gap-4"
+        >
+          <div class="flex items-center justify-center gap-2">
+            <img src="assets/img/Aperture.png" alt="" />
+            <div>
+              <h2>50 Issues</h2>
+              <p>Track and manage your project issues</p>
+            </div>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <p>
+              <span class="text-green-600"
+                ><i class="fa-solid fa-circle"></i
+              ></span>
+              Open
+            </p>
+            <p>
+              <span class="text-purple-600"
+                ><i class="fa-solid fa-circle"></i
+              ></span>
+              Closed
+            </p>
+          </div>
         </div>
-        <div></div>
+        <!-- Body Topbar start -->
+
+        <!-- body for cards start -->
+        <div class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+          <div class="bg-base-100 shadow-sm rounded-md border-t-2 border-bl space-y-4 p-4">
+            <div class="flex items-center justify-between py-1">
+              <img src="assets/img/Open-Status.png" alt="" />
+              <div class="badge badge-dash badge-success">Success</div>
+            </div>
+            <h2 class="text-xl font-bold">
+              Fix navigation menu on mobile devices
+            </h2>
+            <p class="text-[#64748B]">
+              The navigation menu doesn't collapse properly on mobile devices...
+            </p>
+            <div class="flex items-center justify-between">
+              <div class="badge badge-outline badge-success">Success</div>
+              <div class="badge badge-soft badge-secondary">Secondary</div>
+            </div>
+            <div class="flex-grow border-t border-gray-300"></div>
+            <p class="text-[#64748B]">#1 by john_doe</p>
+            <span class="text-[#64748B]">1/15/2024</span>
+          </div>
+
+        </div>
+        <!-- body for cards start -->
       </section>
+      <!-- Body Section end -->
     </main>
   </body>
 </html>
