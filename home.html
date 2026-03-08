@@ -130,21 +130,21 @@
         <button
           id="all-filter-btn"
           onclick="toggleStyle('all-filter-btn')"
-          class="btn btn-primary text-white px-2 w-16"
+          class="btn btn-gray text-neutral px-2 w-16"
         >
           All
         </button>
         <button
           id="opened-filter-btn"
           onclick="toggleStyle('opened-filter-btn')"
-          class="btn btn-primary px-2 w-16"
+          class="btn btn-gray text-neutral px-2 w-16"
         >
           Open
         </button>
         <button
           id="closed-filter-btn"
           onclick="toggleStyle('closed-filter-btn')"
-          class="btn btn-primary px-2 w-16"
+          class="btn btn-gray text-neutral px-2 w-16"
         >
           Closed
         </button>
@@ -181,29 +181,10 @@
 
         <!-- body for cards start -->
         <div
+          id="cards-container"
           class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4"
         >
-          <div
-            class="bg-base-100 shadow-sm rounded-md border-t-2 border-bl space-y-4 p-4"
-          >
-            <div class="flex items-center justify-between py-1">
-              <img src="assets/img/Open-Status.png" alt="" />
-              <div class="badge badge-dash badge-success">Success</div>
-            </div>
-            <h2 class="text-xl font-bold">
-              Fix navigation menu on mobile devices
-            </h2>
-            <p class="text-[#64748B]">
-              The navigation menu doesn't collapse properly on mobile devices...
-            </p>
-            <div class="flex items-center justify-between">
-              <div class="badge badge-outline badge-success">Success</div>
-              <div class="badge badge-soft badge-secondary">Secondary</div>
-            </div>
-            <div class="flex-grow border-t border-gray-300"></div>
-            <p class="text-[#64748B]">#1 by john_doe</p>
-            <span class="text-[#64748B]">1/15/2024</span>
-          </div>
+
         </div>
         <!-- body for cards start -->
       </section>
