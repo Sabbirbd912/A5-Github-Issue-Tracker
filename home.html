@@ -127,9 +127,27 @@
     </header>
     <main class="w-11/12 mx-auto py-10">
       <section class="bg-[#FFFFFF] shadow-md rounded space-x-1 p-6">
-        <button class="btn btn-primary px-2 w-16">All</button>
-        <button class="btn btn-soft px-2 w-16">Open</button>
-        <button class="btn btn-soft px-2 w-16">Closed</button>
+        <button
+          id="all-filter-btn"
+          onclick="toggleStyle('all-filter-btn')"
+          class="btn btn-primary text-white px-2 w-16"
+        >
+          All
+        </button>
+        <button
+          id="opened-filter-btn"
+          onclick="toggleStyle('opened-filter-btn')"
+          class="btn btn-primary px-2 w-16"
+        >
+          Open
+        </button>
+        <button
+          id="closed-filter-btn"
+          onclick="toggleStyle('closed-filter-btn')"
+          class="btn btn-primary px-2 w-16"
+        >
+          Closed
+        </button>
       </section>
       <!-- Body Section start -->
       <section>
@@ -159,12 +177,15 @@
             </p>
           </div>
         </div>
-        <!-- Body Topbar start -->
+        <!-- Body Topbar End -->
 
         <!-- body for cards start -->
-        <div class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4">
-
-          <div class="bg-base-100 shadow-sm rounded-md border-t-2 border-bl space-y-4 p-4">
+        <div
+          class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4"
+        >
+          <div
+            class="bg-base-100 shadow-sm rounded-md border-t-2 border-bl space-y-4 p-4"
+          >
             <div class="flex items-center justify-between py-1">
               <img src="assets/img/Open-Status.png" alt="" />
               <div class="badge badge-dash badge-success">Success</div>
@@ -183,11 +204,11 @@
             <p class="text-[#64748B]">#1 by john_doe</p>
             <span class="text-[#64748B]">1/15/2024</span>
           </div>
-
         </div>
         <!-- body for cards start -->
       </section>
       <!-- Body Section end -->
     </main>
+    <script src="assets/scripts/main.js"></script>
   </body>
 </html>
