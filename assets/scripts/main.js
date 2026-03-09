@@ -1,47 +1,45 @@
-let openedCard = [];
-let closedCard = [];
-let currentStatus = "all-filter-btn"
 
-let countStatusDisplay = document.getElementById("count-status")
-
+let allIssues = [];
+const cardContainer = document.getElementById("cards-container");
+const countStatusDisplay = document.getElementById("count-status");
 
 const allFilterBtn = document.getElementById("all-filter-btn")
 const openedFilterBtn = document.getElementById("opened-filter-btn")
 const closedFilterBtn = document.getElementById("closed-filter-btn")
 
-
-
-function toggleStyle(id) {
-  const buttons = [allFilterBtn, openedFilterBtn, closedFilterBtn];
-
-  buttons.forEach(btn => {
-    btn.classList.remove('btn-primary', 'text-white');
-    btn.classList.add('btn-gray,', 'text-neutral');
-  });
-
-  const selectedBtn = document.getElementById(id);
-  selectedBtn.classList.add('btn-primary', 'text-white');
-  selectedBtn.classList.remove('btn-gray,', 'text-neutral');
+const loadSpinner = (isLoading) => {
+  if (isLoading) {
+    cardContainer.innerHTML = `
+      <div class="col-span-full flex justify-center py-20">
+        <span class="loading loading-spinner text-info"></span>
+      </div>
+    `
+  }
 }
 
 
 async function loadIssuesData() {
+  loadSpinner(true);
   const url = "https://phi-lab-server.vercel.app/api/v1/lab/issues"
   const response = await fetch(url);
   const results = await response.json();
-  displayIssuesData(results.data);
+  allIssues = results.data;
+  displayIssuesData(allIssues);
+  toggleStyle('all-filter-btn');
 }
 
 loadIssuesData()
 
 const displayIssuesData = (issues) => {
-  const cardContainer = document.getElementById("cards-container");
-  // console.log(cardContainer.innerText);
+
   cardContainer.innerHTML = "";
+  countStatusDisplay.innerText = issues.length;
 
   issues.forEach(issue => {
     const issueCard = document.createElement("div");
-    issueCard.className = "bg-base-100 shadow-sm rounded-md border-t-2 border-bl ";
+    const borderColor = issue.status === 'open' ? 'border-green-500' : 'border-purple-600';
+
+    issueCard.className = `bg-base-100 shadow-sm rounded-md border-t-4 ${borderColor} transition-all hover:shadow-md`;
 
     issueCard.innerHTML = `
             <div class="h-[320px] space-y-4 p-4">
@@ -66,5 +64,29 @@ const displayIssuesData = (issues) => {
             </div>
         `
     cardContainer.appendChild(issueCard);
-  })
+  });
+}
+
+
+function toggleStyle(id) {
+  const buttons = [allFilterBtn, openedFilterBtn, closedFilterBtn];
+
+  buttons.forEach(btn => {
+    btn.classList.remove('btn-primary', 'text-white');
+    btn.classList.add('btn-gray', 'text-neutral');
+  });
+
+  const selectedBtn = document.getElementById(id);
+  selectedBtn.classList.add('btn-primary', 'text-white');
+  selectedBtn.classList.remove('btn-gray', 'text-neutral');
+
+  if (id === 'all-filter-btn') {
+    displayIssuesData(allIssues);
+  } else if (id === 'opened-filter-btn') {
+    const opened = allIssues.filter(item => item.status === 'open');
+    displayIssuesData(opened);
+  } else if (id === 'closed-filter-btn') {
+    const closed = allIssues.filter(item => item.status === 'closed');
+    displayIssuesData(closed);
+  }
 }

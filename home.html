@@ -82,7 +82,7 @@
                       <path d="m21 21-4.3-4.3"></path>
                     </g>
                   </svg>
-                  <input type="search" required placeholder="Search" />
+                  <input id="findIssue" type="search" required placeholder="Search" />
                 </label>
                 <!-- Search end -->
               </li>
@@ -116,11 +116,11 @@
                     <path d="m21 21-4.3-4.3"></path>
                   </g>
                 </svg>
-                <input type="search" required placeholder="Search issues..." />
+                <input id="findIssue" type="search" required placeholder="Search issues..." />
               </label>
               <!-- Search end -->
             </li>
-            <li><a class="btn btn-primary">+ New Issue</a></li>
+            <li><button id="search-btn" class="btn btn-primary"> Search </button></li>
           </ul>
         </div>
       </div>
@@ -158,7 +158,7 @@
           <div class="flex items-center justify-center gap-2">
             <img src="assets/img/Aperture.png" alt="" />
             <div>
-              <h2>50 Issues</h2>
+              <h2><span id="count-status">50</span> Issues</h2>
               <p>Track and manage your project issues</p>
             </div>
           </div>
@@ -183,13 +183,15 @@
         <div
           id="cards-container"
           class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4"
-        >
+        ></div>
 
-        </div>
+        <!-- Filtered card -->
+        <section id="filtered-section" class="hidden"></section>
         <!-- body for cards start -->
       </section>
       <!-- Body Section end -->
     </main>
     <script src="assets/scripts/main.js"></script>
+    <!-- <script src="assets/scripts/test.js"></script> -->
   </body>
 </html>
