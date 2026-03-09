@@ -59,37 +59,26 @@
                 />
               </svg>
             </div>
+
             <ul
               tabindex="-1"
-              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+              class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow gap-3"
             >
               <li>
-                <!-- Search start -->
                 <label class="input">
-                  <svg
-                    class="h-[1em] opacity-50"
-                    xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 24 24"
-                  >
-                    <g
-                      stroke-linejoin="round"
-                      stroke-linecap="round"
-                      stroke-width="2.5"
-                      fill="none"
-                      stroke="currentColor"
-                    >
-                      <circle cx="11" cy="11" r="8"></circle>
-                      <path d="m21 21-4.3-4.3"></path>
-                    </g>
-                  </svg>
                   <input
-                    id="findIssue"
-                    type="search"
+                    id="input-search-mobile"
+                    size="10"
+                    type="text"
                     required
-                    placeholder="Search"
+                    placeholder="Search issues..."
                   />
                 </label>
-                <!-- Search end -->
+              </li>
+              <li>
+                <button id="search-btn-mobile" class="btn btn-primary">
+                  Search
+                </button>
               </li>
             </ul>
           </div>
@@ -105,25 +94,10 @@
             <li>
               <!-- Search start -->
               <label class="input">
-                <svg
-                  class="h-[1em] opacity-50"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 24 24"
-                >
-                  <g
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                    stroke-width="2.5"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <circle cx="11" cy="11" r="8"></circle>
-                    <path d="m21 21-4.3-4.3"></path>
-                  </g>
-                </svg>
                 <input
-                  id="findIssue"
-                  type="search"
+                  id="input-search"
+                  size="10"
+                  type="text"
                   required
                   placeholder="Search issues..."
                 />
@@ -168,10 +142,14 @@
           class="bg-[#FFFFFF] shadow rounded flex flex-col md:flex-row items-center justify-between my-4 p-4 gap-4"
         >
           <div class="flex items-center justify-center gap-2">
-            <img src="assets/img/Aperture.png" alt="" />
+            <img class="w-60px" src="assets/img/Aperture.png" alt="" />
             <div>
-              <h2><span id="count-status">50</span> Issues</h2>
-              <p>Track and manage your project issues</p>
+              <h2 class="text-neutral-800 font-bold">
+                <span id="count-status">50</span> Issues
+              </h2>
+              <p class="text-neutral-500">
+                Track and manage your project issues
+              </p>
             </div>
           </div>
           <div class="flex items-center justify-center gap-2">
@@ -200,9 +178,10 @@
         <dialog id="issueModal" class="modal">
           <div class="modal-box w-11/12 max-w-2xl">
             <div id="modal-content"></div>
+
             <div class="modal-action">
               <form method="dialog">
-                <button class="btn">Close</button>
+                <button class="btn btn-primary">Close</button>
               </form>
             </div>
           </div>

@@ -90,48 +90,63 @@ function toggleStyle(id) {
 }
 
 
-const issueModal=document.getElementById("issueModal");
+const issueModal = document.getElementById("issueModal");
 
 async function openModal(issueId) {
   const modalContent = document.getElementById("modal-content");
-  
+
   modalContent.innerHTML = "div";
   issueModal.showModal();
 
   const singleApiUrl = `https://phi-lab-server.vercel.app/api/v1/lab/issue/${issueId}`;
-  
-    const res = await fetch(singleApiUrl);
-    const results = await res.json();
-    const issue = results.data;
 
-    modalContent.innerHTML = `
+  const res = await fetch(singleApiUrl);
+  const results = await res.json();
+  const issue = results.data;
+
+  modalContent.innerHTML = `
       <div class="space-y-4">
-        <div class="flex items-center justify-between border-b pb-4">
-          <div class="flex items-center gap-2">
-             <img class="w-6" src="${issue.status === 'open' ? 'assets/img/Open-Status.png' : 'assets/img/Closed-Status.png'}" alt="" />
+        <div class="pb-3">
+          <div class="flex items-center mb-2">
              <h2 class="text-2xl font-bold">${issue.title}</h2>
           </div>
-          <div class="badge ${issue.priority === 'high' ? 'badge-error' : 'badge-warning'} capitalize">
-            ${issue.priority}
+          <div>
+            <span class="badge badge-success">${issue.status}</span>
+            <span class="text-gray-500">. Opened by ${issue.author} . ${new Date(issue.createdAt).toLocaleDateString()} </span>
           </div>
         </div>
 
-        <p class="text-gray-600 text-lg">${issue.description}</p>
-        
         <div class="flex flex-wrap gap-2">
           ${issue.labels.map(label => `<span class="badge badge-warning">${label}</span>`).join(" ")}
         </div>
 
+        <p class="text-gray-600 text-lg">${issue.description}</p>
+        
         <div class="bg-gray-50 p-4 rounded-lg flex justify-between items-center text-sm">
           <div>
-            <p class="font-semibold text-gray-500">Author</p>
-            <p class="text-primary font-bold">${issue.author}</p>
+            <p class="font-semibold text-gray-500">Assignee</p>
+            <p class="text-primary font-bold">${issue.assignee}</p>
           </div>
           <div class="text-right">
-            <p class="font-semibold text-gray-500">Created At</p>
-            <p>${new Date(issue.createdAt).toLocaleDateString()}</p>
+            <p class="font-semibold text-gray-500">Priority:</p>
+            <p class="badge badge-secondary">${issue.priority}</p>
           </div>
         </div>
       </div>
     `;
 }
+
+document.getElementById("search-btn").addEventListener("click", () => {
+  const input = document.getElementById("input-search");
+  const searchValue = input.value.trim().toLowerCase();
+  console.log(searchValue)
+
+// if (searchValue === "") {
+//     displayIssuesData(allIssues);
+//     return;
+//   }
+
+  fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
+    .then(res => res.json())
+    .then((data) => displayIssuesData(data.data));
+})
