@@ -82,7 +82,12 @@
                       <path d="m21 21-4.3-4.3"></path>
                     </g>
                   </svg>
-                  <input id="findIssue" type="search" required placeholder="Search" />
+                  <input
+                    id="findIssue"
+                    type="search"
+                    required
+                    placeholder="Search"
+                  />
                 </label>
                 <!-- Search end -->
               </li>
@@ -116,11 +121,18 @@
                     <path d="m21 21-4.3-4.3"></path>
                   </g>
                 </svg>
-                <input id="findIssue" type="search" required placeholder="Search issues..." />
+                <input
+                  id="findIssue"
+                  type="search"
+                  required
+                  placeholder="Search issues..."
+                />
               </label>
               <!-- Search end -->
             </li>
-            <li><button id="search-btn" class="btn btn-primary"> Search </button></li>
+            <li>
+              <button id="search-btn" class="btn btn-primary">Search</button>
+            </li>
           </ul>
         </div>
       </div>
@@ -185,8 +197,17 @@
           class="grid grid-col-1 items-center justify-items-center md:grid-cols-2 lg:grid-cols-4 gap-4"
         ></div>
 
-        <!-- Filtered card -->
-        <section id="filtered-section" class="hidden"></section>
+        <dialog id="issueModal" class="modal">
+          <div class="modal-box w-11/12 max-w-2xl">
+            <div id="modal-content"></div>
+            <div class="modal-action">
+              <form method="dialog">
+                <button class="btn">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
         <!-- body for cards start -->
       </section>
       <!-- Body Section end -->
