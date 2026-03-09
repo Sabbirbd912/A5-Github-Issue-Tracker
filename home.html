@@ -39,7 +39,7 @@
     <link rel="stylesheet" href="assets/styles/design.css" />
   </head>
   <body class="bg-[#F8FAFC]">
-    <header>
+    <header class="sticky top-0 z-50">
       <div class="navbar bg-base-100 shadow-sm">
         <div class="navbar-start">
           <div class="dropdown">
@@ -111,7 +111,7 @@
         </div>
       </div>
     </header>
-    <main class="w-11/12 mx-auto py-10">
+    <main class="w-11/12 mx-auto py-8">
       <section class="bg-[#FFFFFF] shadow-md rounded space-x-1 p-6">
         <button
           id="all-filter-btn"
@@ -139,13 +139,13 @@
       <section>
         <!-- Body Topbar start -->
         <div
-          class="bg-[#FFFFFF] shadow rounded flex flex-col md:flex-row items-center justify-between my-4 p-4 gap-4"
+          class="bg-[#FFFFFF] shadow rounded sm:flex flex-col md:flex-row items-center justify-between my-4 p-4 gap-4"
         >
           <div class="flex items-center justify-center gap-2">
             <img class="w-60px" src="assets/img/Aperture.png" alt="" />
             <div>
-              <h2 class="text-neutral-800 font-bold">
-                <span id="count-status">50</span> Issues
+              <h2 class="text-neutral-800 text-xl font-bold">
+                <span id="count-status" class="text-primary">50</span> Issues
               </h2>
               <p class="text-neutral-500">
                 Track and manage your project issues

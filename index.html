@@ -33,22 +33,24 @@
     <main
       class="min-h-screen flex items-center justify-center bg-[#F8FAFC] p-8"
     >
-      <div class="bg-base-100 py-10 px-4 rounded-xl shadow-2xl w-96">
+      <div class="bg-base-100 py-6 px-4 rounded-xl shadow-2xl w-96">
         <div class="top-part text-center">
           <img
             class="mx-auto w-[60px] mb-4"
             src="assets/img/github-logo.png"
             alt="Github Logo"
           />
-          <h2 class="text-xl font-bold">GitHub Issues Tracker</h2>
+          <h2 class="text-2xl font-bold">GitHub Issues Tracker</h2>
           <p class="text-[#64748B] my-2">Sign in to manage your issues</p>
         </div>
         <fieldset class="fieldset mx-auto w-xs">
-          <label class="label text-neutral font-bold">User Name</label>
+          <label class="label text-neutral font-bold text-[14px]">User Name</label>
           <input id="user-input" type="text" class="input" placeholder="Enter User Name" />
 
-          <label class="label text-neutral font-bold">Password</label>
+
+          <label class="label text-neutral font-bold text-[14px] mt-1">Password</label>
           <input id="user-pass" type="password" class="input" placeholder="Enter Password" />
+
 
           <button id="login-btn" onclick="loginHandler()" type="button" class="btn btn-primary mt-4">Sign In</button>
         </fieldset>

@@ -141,10 +141,10 @@ document.getElementById("search-btn").addEventListener("click", () => {
   const searchValue = input.value.trim().toLowerCase();
   console.log(searchValue)
 
-// if (searchValue === "") {
-//     displayIssuesData(allIssues);
-//     return;
-//   }
+  if (searchValue === "") {
+    displayIssuesData(allIssues);
+    return;
+  }
 
   fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issues/search?q=${searchValue}`)
     .then(res => res.json())
